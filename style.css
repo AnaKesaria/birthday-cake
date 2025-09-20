@@ -1,0 +1,104 @@
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #ffe6f0;
+      flex-direction: column;
+    }
+    .cake, .text {
+      display: none; /* hidden until birthday */
+    }
+
+    .cake {
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+
+    /* Base layer */
+    .layer {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #c2185b;
+      border-radius: 10px;
+      opacity: 0;
+      animation: appear 1s forwards;
+    }
+
+    .layer1 {
+      bottom: 0;
+      width: 180px;
+      height: 60px;
+      animation-delay: 0s;
+    }
+    .layer2 {
+      bottom: 60px;
+      width: 140px;
+      height: 50px;
+      background: #e57373;
+      animation-delay: 1s;
+    }
+    .layer3 {
+      bottom: 110px;
+      width: 100px;
+      height: 40px;
+      background: #f06292;
+      animation-delay: 2s;
+    }
+
+    /* Candle */
+    .candle {
+      position: absolute;
+      bottom: 150px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 40px;
+      background: #fff59d;
+      opacity: 0;
+      animation: appear 1s forwards;
+      animation-delay: 3s;
+    }
+
+    /* Flame */
+    .flame {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 15px;
+      height: 15px;
+      background: orange;
+      border-radius: 50%;
+      opacity: 0;
+      animation: flicker 0.5s infinite alternate;
+      animation-delay: 4s;
+    }
+
+    @keyframes appear {
+      to { opacity: 1; }
+    }
+
+    @keyframes flicker {
+      0% { opacity: 0.8; transform: translateX(-50%) scale(1); }
+      100% { opacity: 1; transform: translateX(-50%) scale(1.2); }
+    }
+
+    .text {
+      margin-top: 20px;
+      font-family: 'My love', cursive;
+      font-size: 2.5em;
+      color: #c2185b;
+      text-shadow: 2px 2px 5px rgba(255,255,255,0.7);
+      opacity: 0;
+      animation: appear 1s forwards;
+      animation-delay: 5s;
+    }
+     .message {
+      font-size: 2em;
+      color: #444;
+      font-family: Arial, sans-serif;
+    }

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   const birthdayMonth = 9; // october (0 = Jan)
-  const birthdayDay = 6;
+  const birthdayDay = 7;
 
   const message = document.querySelector(".message");
   const cake = document.querySelector(".cake");
